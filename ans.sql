@@ -1,8 +1,4 @@
--- =======================================
--- Question 1
--- Show the total payment amount for each payment date
--- Latest 5 payment dates only
--- ============================
+
 SELECT 
     paymentDate,
     SUM(amount) AS total_payment
@@ -11,12 +7,6 @@ GROUP BY paymentDate
 ORDER BY paymentDate DESC
 LIMIT 5;
 
-
--- ============================
--- Question 2
--- Find the average credit limit of each customer
--- Grouped by customer name and country
--- ============================
 SELECT 
     customerName,
     country,
@@ -24,12 +14,6 @@ SELECT
 FROM customers
 GROUP BY customerName, country;
 
-
--- ============================
--- Question 3
--- Find the total price of products ordered
--- Formula: total price = quantityOrdered * priceEach
--- ============================
 SELECT 
     productCode,
     quantityOrdered,
@@ -37,11 +21,6 @@ SELECT
 FROM orderdetails
 GROUP BY productCode, quantityOrdered;
 
-
--- ============================
--- Question 4
--- Find the highest payment amount for each check number
--- ============================
 SELECT 
     checkNumber,
     MAX(amount) AS highest_payment
